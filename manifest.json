@@ -1,0 +1,38 @@
+{
+  "manifest_version": 3,
+  "name": "odeX - Odoo ORM Box",
+  "short_name": "odeX",
+  "version": "1.0.0",
+  "description": "Run Odoo ORM calls (search_read, read, write, create, fields_get…) in Python syntax from any Odoo page and inspect the result.",
+  "icons": {
+    "16": "src/icons/icon-16.png",
+    "32": "src/icons/icon-32.png",
+    "48": "src/icons/icon-48.png",
+    "128": "src/icons/icon-128.png"
+  },
+  "action": {
+    "default_title": "odeX: toggle the ORM box (Alt+Shift+X)",
+    "default_icon": {
+      "16": "src/icons/icon-16.png",
+      "32": "src/icons/icon-32.png"
+    }
+  },
+  "background": {
+    "service_worker": "src/background.js",
+    "scripts": ["src/background.js"]
+  },
+  "permissions": ["activeTab", "scripting", "storage"],
+  "commands": {
+    "_execute_action": {
+      "suggested_key": { "default": "Alt+Shift+X" },
+      "description": "Toggle the odeX ORM box"
+    }
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "odex@odex.app",
+      "strict_min_version": "128.0",
+      "data_collection_permissions": { "required": ["none"] }
+    }
+  }
+}
